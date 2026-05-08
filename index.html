@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Algeciras | Ayuntamiento de Algeciras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="mainHeader" class="main-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="logos/Logo Algeciras color.png" alt="Escudo de Algeciras" id="escudoImage">
+                <div class="council-name">
+                    <span class="council-ayto">Ayuntamiento</span>
+                    <span class="council-alg">de Algeciras</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="header-search">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="searchInput" placeholder="Texto a buscar" aria-label="Texto a buscar">
+                        <button id="searchButton">
+                            <span class="search-icon">🔍</span> Buscar
+                        </button>
+                    </div>
+                </div>
+                <nav id="headerNav" class="header-nav">
+                    <ul>
+                        <li><a href="#">TEMAS</a></li>
+                        <li class="nav-separator">|</li>
+                        <li><a href="#">AYUNTAMIENTO</a></li>
+                        <li class="nav-separator">|</li>
+                        <li><a href="#">LA CIUDAD</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="mainContent">
+        <section id="heroSection">
+            <h1 id="pageTitle">Eventos</h1>
+        </section>
+
+        <div id="layoutWrapper" class="layout-wrapper">
+            <aside id="faqSidebar" class="faq-sidebar">
+                <h2>Preguntas Frecuentes (FAQS)</h2>
+                <div class="faq-list">
+                    <details>
+                        <summary>¿Cómo inscribirse a un evento?</summary>
+                        <p>Puede inscribirse a través de la sede electrónica o presencialmente.</p>
+                    </details>
+                    <details>
+                        <summary>¿Son gratuitos los eventos?</summary>
+                        <p>Depende del evento. Consulte los detalles en la ficha correspondiente.</p>
+                    </details>
+                    <details>
+                        <summary>¿Dónde aparcar?</summary>
+                        <p>Recomendamos usar los parkings públicos cercanos al centro.</p>
+                    </details>
+                </div>
+            </aside>
+
+            <section id="eventsSection" class="events-section">
+                <h2 id="sectionTitle">Eventos Disponibles</h2>
+                <div id="eventsGrid" class="events-grid">
+                    <!-- Los eventos se cargarán aquí mediante main.js -->
+                    <div class="loading-state">Cargando eventos...</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="mainFooter" class="main-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="logos/Logo Algeciras 1 tinta fondos oscuros sin letras interiores.png" alt="Logo" class="footer-mini-logo">
+                <span class="footer-social-name">ayuntamientoalgeciras</span>
+            </div>
+            <div class="footer-right">
+                <span>© Ayuntamiento de Algeciras</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

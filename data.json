@@ -1,0 +1,46 @@
+[
+  {
+    "eventId": 1,
+    "eventName": "Feria Real de Algeciras",
+    "eventDate": "2026-06-20",
+    "eventDuration": "7 días",
+    "eventLocation": "Recinto Ferial",
+    "eventDescription": "La gran fiesta de Algeciras con casetas, atracciones y música.",
+    "eventImageUrl": "https://via.placeholder.com/400x200?text=Feria+Real",
+    "isFeatured": true,
+    "categoryType": "Feria"
+  },
+  {
+    "eventId": 2,
+    "eventName": "Feria del Libro",
+    "eventDate": "2026-05-15",
+    "eventDuration": "3 días",
+    "eventLocation": "Plaza Alta",
+    "eventDescription": "Encuentro cultural con autores y librerías locales.",
+    "eventImageUrl": "https://via.placeholder.com/400x200?text=Feria+Libro",
+    "isFeatured": false,
+    "categoryType": "Cultura"
+  },
+  {
+    "eventId": 3,
+    "eventName": "Diverciencias",
+    "eventDate": "2026-09-10",
+    "eventDuration": "2 días",
+    "eventLocation": "Parque María Cristina",
+    "eventDescription": "Jornadas de ciencia divertida para toda la familia.",
+    "eventImageUrl": "https://via.placeholder.com/400x200?text=Diverciencias",
+    "isFeatured": false,
+    "categoryType": "Ciencia"
+  },
+  {
+    "eventId": 4,
+    "eventName": "Concierto de Verano",
+    "eventDate": "2026-07-05",
+    "eventDuration": "1 noche",
+    "eventLocation": "Plaza de Toros",
+    "eventDescription": "Música en directo bajo las estrellas.",
+    "eventImageUrl": "https://via.placeholder.com/400x200?text=Concierto",
+    "isFeatured": true,
+    "categoryType": "Música"
+  }
+]
