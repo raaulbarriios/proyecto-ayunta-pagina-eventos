@@ -273,12 +273,6 @@ body {
     margin-bottom: 0.6rem;
 }
 
-.event-description {
-    font-size: 0.9rem;
-    color: var(--textColor);
-    margin-bottom: 0.5rem;
-}
-
 .map-link {
     display: inline-block;
     color: var(--primaryColor);

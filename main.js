@@ -34,19 +34,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const eventCard = document.createElement('div');
             eventCard.className = 'event-card';
             
-            // Link entire card to details
             eventCard.innerHTML = `
-                <a href="event-detail.html?id=${event.eventId}" class="card-link">
-                    <img src="${event.eventImageUrl}" alt="${event.eventName}" class="event-image">
-                    <div class="event-info">
-                        <span class="category-tag">${event.categoryType || 'General'}</span>
-                        <h3>${event.eventName}</h3>
-                        <div class="event-meta">
-                            <p>📅 ${event.eventDate}</p>
-                            <p>📍 ${event.eventLocation}</p>
-                        </div>
+                <img src="${event.eventImageUrl}" alt="${event.eventName}" class="event-image">
+                <div class="event-info">
+                    <span class="category-tag">${event.categoryType || 'General'}</span>
+                    <h3>${event.eventName}</h3>
+                    <div class="event-meta">
+                        <p>📅 ${event.eventDate}</p>
+                        <p>📍 ${event.eventLocation}</p>
                     </div>
-                </a>
+                    <a href="https://www.google.com/maps/search/${encodeURIComponent(event.eventLocation + ' Algeciras')}" 
+                       target="_blank" class="map-link">Ver en el mapa</a>
+                </div>
             `;
             eventsGrid.appendChild(eventCard);
         });
