@@ -6,6 +6,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const eventsGrid = document.getElementById('eventsGrid');
     const searchInput = document.getElementById('searchInput');
+    const searchInputDesktop = document.getElementById('searchInputDesktop');
+    const mobileSearchBtn = document.getElementById('mobileSearchBtn');
+    const mobileSearchPanel = document.getElementById('mobileSearchPanel');
+
+    // Toggle Mobile Search Panel
+    mobileSearchBtn.addEventListener('click', () => {
+        mobileSearchPanel.classList.toggle('active');
+        mobileSearchBtn.classList.toggle('active');
+        if (mobileSearchPanel.classList.contains('active')) {
+            searchInput.focus();
+        }
+    });
 
     let allEvents = [];
 
@@ -51,15 +63,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Real-time Search
-    searchInput.addEventListener('input', () => {
-        const searchTerm = searchInput.value.toLowerCase();
+    const filterEvents = (term) => {
+        const searchTerm = term.toLowerCase();
         const filteredEvents = allEvents.filter(event =>
             event.eventName.toLowerCase().includes(searchTerm) ||
             event.eventDescription.toLowerCase().includes(searchTerm) ||
             event.eventLocation.toLowerCase().includes(searchTerm)
         );
         renderEvents(filteredEvents);
+    };
+
+    // Real-time Search
+    searchInput.addEventListener('input', (e) => {
+        filterEvents(e.target.value);
+    });
+
+    searchInputDesktop.addEventListener('input', (e) => {
+        filterEvents(e.target.value);
     });
 
     fetchEvents();
