@@ -13,61 +13,37 @@
     <header id="mainHeader" class="main-header">
         <div class="header-container">
             <div class="header-logo">
-                <img src="logos/Logo Algeciras color.png" alt="Escudo de Algeciras" id="escudoImage">
-                <div class="council-name">
-                    <span class="council-ayto">Ayuntamiento</span>
-                    <span class="council-alg">de Algeciras</span>
-                </div>
+                <img src="logos/logoayunt.png" alt="Ayuntamiento de Algeciras" class="main-logo">
             </div>
             
-            <div class="header-right">
+            <div class="header-actions">
                 <div class="header-search">
                     <div class="search-input-wrapper">
-                        <input type="text" id="searchInput" placeholder="Texto a buscar" aria-label="Texto a buscar">
+                        <input type="text" id="searchInput" placeholder="Buscar eventos..." aria-label="Buscar eventos">
                         <button id="searchButton">
-                            <span class="search-icon">🔍</span> Buscar
+                            <span class="search-icon">🔍</span>
                         </button>
                     </div>
                 </div>
-                <nav id="headerNav" class="header-nav">
-                    <ul>
-                        <li><a href="#">TEMAS</a></li>
-                        <li class="nav-separator">|</li>
-                        <li><a href="#">AYUNTAMIENTO</a></li>
-                        <li class="nav-separator">|</li>
-                        <li><a href="#">LA CIUDAD</a></li>
-                    </ul>
-                </nav>
             </div>
         </div>
     </header>
 
     <main id="mainContent">
         <section id="heroSection">
-            <h1 id="pageTitle">Eventos</h1>
+            <div class="hero-container">
+                <h1 id="pageTitle">Eventos Disponibles</h1>
+            </div>
         </section>
 
         <div id="layoutWrapper" class="layout-wrapper">
-            <aside id="faqSidebar" class="faq-sidebar">
-                <h2>Preguntas Frecuentes (FAQS)</h2>
-                <div class="faq-list">
-                    <details>
-                        <summary>¿Cómo inscribirse a un evento?</summary>
-                        <p>Puede inscribirse a través de la sede electrónica o presencialmente.</p>
-                    </details>
-                    <details>
-                        <summary>¿Son gratuitos los eventos?</summary>
-                        <p>Depende del evento. Consulte los detalles en la ficha correspondiente.</p>
-                    </details>
-                    <details>
-                        <summary>¿Dónde aparcar?</summary>
-                        <p>Recomendamos usar los parkings públicos cercanos al centro.</p>
-                    </details>
-                </div>
-            </aside>
-
             <section id="eventsSection" class="events-section">
-                <h2 id="sectionTitle">Eventos Disponibles</h2>
+                <div class="section-header">
+                    <h2 id="sectionTitle">Eventos Destacados</h2>
+                    <div class="view-options">
+                        <!-- Opciones futuras de vista -->
+                    </div>
+                </div>
                 <div id="eventsGrid" class="events-grid">
                     <!-- Los eventos se cargarán aquí mediante main.js -->
                     <div class="loading-state">Cargando eventos...</div>

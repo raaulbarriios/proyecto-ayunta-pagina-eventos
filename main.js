@@ -6,11 +6,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const eventsGrid = document.getElementById('eventsGrid');
     const searchInput = document.getElementById('searchInput');
-    const searchButton = document.getElementById('searchButton');
 
     let allEvents = [];
 
-    // Obtener los eventos desde el archivo JSON (simulando base de datos)
+    // Fetch Events from JSON
     const fetchEvents = async () => {
         try {
             const response = await fetch('data.json');
@@ -18,44 +17,43 @@ document.addEventListener('DOMContentLoaded', () => {
             renderEvents(allEvents);
         } catch (error) {
             console.error('Error loading events:', error);
-            eventsGrid.innerHTML = '<p class="error-message">Error al cargar los eventos. Por favor, inténtelo más tarde.</p>';
+            eventsGrid.innerHTML = '<p class="error-message">Error al cargar los eventos.</p>';
         }
     };
 
-    // Renderizar los eventos en la cuadrícula
+    // Render Event Cards
     const renderEvents = (eventsToRender) => {
         eventsGrid.innerHTML = '';
 
         if (eventsToRender.length === 0) {
-            eventsGrid.innerHTML = '<p class="no-results">No se han encontrado eventos que coincidan con su búsqueda.</p>';
+            eventsGrid.innerHTML = '<p class="no-results">No se han encontrado eventos.</p>';
             return;
         }
 
         eventsToRender.forEach(event => {
             const eventCard = document.createElement('div');
             eventCard.className = 'event-card';
-
-            // Siguiendo el boceto: Título, Click al mapa, Duración
+            
+            // Link entire card to details
             eventCard.innerHTML = `
-                <img src="${event.eventImageUrl}" alt="${event.eventName}" class="event-image">
-                <div class="event-info">
-                    <h3>${event.eventName}</h3>
-                    <div class="event-meta">
-                        <p><strong>Fecha:</strong> ${event.eventDate}</p>
-                        <p><strong>Ubicación:</strong> ${event.eventLocation}</p>
-                        <p><strong>Duración:</strong> ${event.eventDuration}</p>
+                <a href="event-detail.html?id=${event.eventId}" class="card-link">
+                    <img src="${event.eventImageUrl}" alt="${event.eventName}" class="event-image">
+                    <div class="event-info">
+                        <span class="category-tag">${event.categoryType || 'General'}</span>
+                        <h3>${event.eventName}</h3>
+                        <div class="event-meta">
+                            <p>📅 ${event.eventDate}</p>
+                            <p>📍 ${event.eventLocation}</p>
+                        </div>
                     </div>
-                    <p class="event-description">${event.eventDescription}</p>
-                    <a href="https://www.google.com/maps/search/${encodeURIComponent(event.eventLocation + ' Algeciras')}" 
-                       target="_blank" class="map-link">Ver en el mapa</a>
-                </div>
+                </a>
             `;
             eventsGrid.appendChild(eventCard);
         });
     };
 
-    // Filtrar eventos basados en la entrada de búsqueda
-    const filterEvents = () => {
+    // Real-time Search
+    searchInput.addEventListener('input', () => {
         const searchTerm = searchInput.value.toLowerCase();
         const filteredEvents = allEvents.filter(event =>
             event.eventName.toLowerCase().includes(searchTerm) ||
@@ -63,14 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.eventLocation.toLowerCase().includes(searchTerm)
         );
         renderEvents(filteredEvents);
-    };
-
-    // Escuchadores de eventos (Listeners)
-    searchButton.addEventListener('click', filterEvents);
-    searchInput.addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') filterEvents();
     });
 
-    // Carga inicial de datos
     fetchEvents();
 });
