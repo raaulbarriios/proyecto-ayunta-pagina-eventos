@@ -47,13 +47,17 @@ document.addEventListener('DOMContentLoaded', () => {
             eventCard.className = 'event-card';
             
             eventCard.innerHTML = `
-                <img src="${event.eventImageUrl}" alt="${event.eventName}" class="event-image">
+                <a href="${event.eventUrl || '#'}" target="_blank" class="event-image-link">
+                    <img src="${event.eventImageUrl}" alt="${event.eventName}" class="event-image">
+                </a>
                 <div class="event-info">
                     <span class="category-tag">${event.categoryType || 'General'}</span>
-                    <h3>${event.eventName}</h3>
+                    <h3>
+                        <a href="${event.eventUrl || '#'}" target="_blank" class="event-title-link">${event.eventName}</a>
+                    </h3>
                     <div class="event-meta">
-                        <p>📅 ${event.eventDate}</p>
-                        <p>📍 ${event.eventLocation}</p>
+                        <p>${event.eventDate}</p>
+                        <p>${event.eventLocation}</p>
                     </div>
                     <a href="https://www.google.com/maps/search/${encodeURIComponent(event.eventLocation + ' Algeciras')}" 
                        target="_blank" class="map-link">Ver en el mapa</a>

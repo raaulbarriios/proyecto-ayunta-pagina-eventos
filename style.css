@@ -131,15 +131,29 @@ body {
 }
 
 .search-btn {
-    background-color: #002b5c;
+    background-color: #084D82;
     border-color: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF; /* Icono blanco por defecto para que se vea sobre el círculo azul */
+    border-radius: 8px; /* Cuadrado con bordes redondeados institucionales */
     margin-right: 1rem;
     margin-top: 10px;
+    transition: all 0.3s ease;
 }
 
+.search-btn:hover {
+    background-color: #0A5A99;
+    color: #FFFFFF;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.search-btn:active,
 .search-btn.active {
-    background-color: var(--accentColor);
-    color: var(--darkBlue);
+    background-color: #FFB500; /* Círculo amarillo al pulsar */
+    color: #084D82; /* Icono azul al pulsar */
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Sombrita al pulsar */
+    transform: translateY(0);
 }
 
 .mobile-search-panel {
@@ -195,7 +209,8 @@ body {
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
-    background: #005691; /* Igual que el botón para evitar píxeles blancos */
+    background: #084D82;
+    /* Igual que el botón para evitar píxeles blancos */
     -webkit-border-radius: 30px;
     border-radius: 30px;
     overflow: hidden;
@@ -223,29 +238,33 @@ body {
 #searchInputDesktop::-webkit-input-placeholder {
     color: #999;
 }
+
 #searchInput:-moz-placeholder,
 #searchInputDesktop:-moz-placeholder {
     color: #999;
     opacity: 1;
 }
+
 #searchInput::-moz-placeholder,
 #searchInputDesktop::-moz-placeholder {
     color: #999;
     opacity: 1;
 }
+
 #searchInput:-ms-input-placeholder,
 #searchInputDesktop:-ms-input-placeholder {
     color: #999;
 }
+
 #searchInput::placeholder,
 #searchInputDesktop::placeholder {
     color: #999;
 }
 
 .searchButtonOfficial {
-    background-color: #005691;
+    background-color: #084D82;
     border: none;
-    color: var(--white);
+    color: #FFFFFF;
     cursor: pointer;
     padding: 0 25px;
     display: -webkit-box;
@@ -259,6 +278,20 @@ body {
     gap: 6px;
     font-weight: 600;
     font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.searchButtonOfficial:hover {
+    background-color: #0A5A99;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.searchButtonOfficial:active,
+.searchButtonOfficial.active {
+    background-color: #FFB500;
+    color: #084D82;
+    transform: translateY(0);
 }
 
 .search-icon-svg-small {
@@ -413,13 +446,30 @@ body {
     transform: translateY(-5px);
 }
 
-.event-image {
+.event-image-link {
+    display: block;
     width: 100%;
     height: 180px;
+    overflow: hidden;
+}
+
+.event-image {
+    width: 100%;
+    height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
     display: block;
-    /* Elimina el espacio fantasma debajo de imágenes inline */
+    -webkit-transition: -webkit-transform 0.3s ease;
+    -o-transition: -o-transform 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover .event-image {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .event-info {
@@ -427,9 +477,20 @@ body {
 }
 
 .event-info h3 {
-    color: var(--primaryColor);
     margin-bottom: 0.4rem;
     font-size: 1.2rem;
+}
+
+.event-title-link {
+    color: var(--primaryColor);
+    text-decoration: none;
+    -webkit-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+.event-title-link:hover {
+    color: var(--darkBlue);
 }
 
 .event-meta {

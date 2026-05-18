@@ -7,6 +7,7 @@
     "eventLocation": "Recinto Ferial",
     "eventDescription": "La gran fiesta de Algeciras con casetas, atracciones y música.",
     "eventImageUrl": "https://via.placeholder.com/400x200?text=Feria+Real",
+    "eventUrl": "https://pruebaayuntamiento.pages.dev",
     "isFeatured": true,
     "categoryType": "Feria"
   },
@@ -18,6 +19,7 @@
     "eventLocation": "Plaza Alta",
     "eventDescription": "Encuentro cultural con autores y librerías locales.",
     "eventImageUrl": "https://via.placeholder.com/400x200?text=Feria+Libro",
+    "eventUrl": "https://www.algeciras.es/es/detalle-de-noticia/La-XXXVIII-Feria-del-Libro-de-Algeciras-tendra-lugar-del-25-de-abril-al-4-de-mayo/",
     "isFeatured": false,
     "categoryType": "Cultura"
   },
@@ -29,6 +31,7 @@
     "eventLocation": "Parque María Cristina",
     "eventDescription": "Jornadas de ciencia divertida para toda la familia.",
     "eventImageUrl": "https://via.placeholder.com/400x200?text=Diverciencias",
+    "eventUrl": "https://www.divercienciaalgeciras.com/",
     "isFeatured": false,
     "categoryType": "Ciencia"
   },
@@ -40,6 +43,7 @@
     "eventLocation": "Plaza de Toros",
     "eventDescription": "Música en directo bajo las estrellas.",
     "eventImageUrl": "https://via.placeholder.com/400x200?text=Concierto",
+    "eventUrl": "https://www.bandsintown.com/es/c/algeciras-spain",
     "isFeatured": true,
     "categoryType": "Música"
   }
